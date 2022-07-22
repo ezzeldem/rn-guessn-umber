@@ -14,10 +14,10 @@ const styles = StyleSheet.create({
   header: {
     width: "100%",
     alignItems: "center",
-    height: 100,
     justifyContent: "center",
     padding: 30,
     backgroundColor: Color.primary,
+    paddingTop: 60,
   },
   headerTitle: {
     color: "black",
