@@ -10,8 +10,10 @@ import {
 } from "react-native";
 import Card from "../components/Card";
 import Input from "../components/Input";
+import MinButton from "../components/MinButton";
 import NumberContainer from "../components/NumberContainer";
 import Color from "../constants/color";
+import DefultStyles from "../constants/defult-styles";
 
 const StartGameScreen = (props) => {
   const [enteredValue, setEnteredValue] = useState("");
@@ -46,10 +48,9 @@ const StartGameScreen = (props) => {
       <Card style={styles.summaryContainer}>
         <Text> Chosen Number</Text>
         <NumberContainer>{selectedNumber}</NumberContainer>
-        <Button
-          title='Start Game'
-          onPress={() => props.onStartGame(selectedNumber)}
-        />
+        <MinButton onPress={() => props.onStartGame(selectedNumber)}>
+          Start Game
+        </MinButton>
       </Card>
     );
   }
@@ -63,7 +64,7 @@ const StartGameScreen = (props) => {
       <View style={styles.screen}>
         <Text style={styles.title}>Start A New Game</Text>
         <Card style={styles.inputContainer}>
-          <Text>Select a Number</Text>
+          <Text style={DefultStyles.bodyText}>Select a Number</Text>
           <Input
             style={styles.input}
             blurOnSubmit
@@ -99,7 +100,7 @@ const StartGameScreen = (props) => {
 
 const styles = StyleSheet.create({
   screen: {
-    // flex: 1,
+    flex: 1,
     padding: 10,
     alignItems: "center",
   },
@@ -115,6 +116,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     marginVertical: 20,
+    fontFamily: "opne-sans-bold",
   },
   buttonContainer: {
     flexDirection: "row",
